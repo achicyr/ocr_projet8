@@ -8,7 +8,7 @@ import { AuthContext } from '../../utils/auth'
 import PagesComponents from '../../components/pagesComponents.js'
 
 function Home() {
-
+	/*
 	let [Contents, setContents] = useState([])
 	, {token, datas, user, setUser, setDatas} = useContext(AuthContext)
     , navigate = useNavigate()
@@ -41,12 +41,26 @@ function Home() {
 		// else generateOutput(datas.home)
 		generateOutput(datas.home)
 	}, [datas, token])
+	*/
 
-	
 
-	
+	const handleSubmit = e => { 
+		alert('ok submitted')
+	}
 	return <>
-		{Contents}
+		{/* {Contents} */}
+		<section id="mainSection_left">
+			<span id="unfullfilledRequests"></span>
+			<hr />
+			<article id="mapMark_details"></article>
+		</section>
+		<section id="mainSection_right">
+			<div id="map_gmap"></div>
+			<form onSubmit={handleSubmit}>
+				<input placeholder="Entrer nom lieu, ou coordonnées de géolocalisation" />
+				<button>🔍</button>
+			</form>
+		</section>
 	</>
 }
 export default Home

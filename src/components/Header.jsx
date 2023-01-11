@@ -34,9 +34,6 @@ export default function Header() {
 	// }, [])
 	
 	return <header className="header">
-        <menu className="header__mainMenu">
-            <li><Link to="/">Accueil</Link></li>
-        </menu>
         <SectionLogoStyled className="header__logo">
             <Link to="/">
                 <img src="/logo192.png" alt="" />
@@ -45,6 +42,10 @@ export default function Header() {
                 
             </Link>
         </SectionLogoStyled>
+        <hgroup className="header__mainMenu">
+            <h1>Slogan principal</h1>
+            <h2>Slogan secondaire</h2>
+        </hgroup>
 
         <SectionStyled className="header__logins">
             {!token && <>

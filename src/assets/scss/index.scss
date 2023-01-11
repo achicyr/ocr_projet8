@@ -16,11 +16,15 @@ body{
 
   }
   >main{
-    >section{
+    >form{
+      &#login_form{
+        
+      }
     }
-    >article{
-    }
-    .carte{
+    >aside{
+      &#login_aside{
+        background: url(../../../public/img/login_aside_2.png);
+      }
     }
   }
   >footer{

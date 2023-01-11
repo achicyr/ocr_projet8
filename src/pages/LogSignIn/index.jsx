@@ -20,7 +20,7 @@ const FormStyled = styled.form`
 
 
 
-export default function Login({path}) {
+export default function LogSignIn({path}) {
 
     const [goSignin, setGoSignin] = useState(false)
     , pathBack = "" /*"/"+useParams()?.back || "/"*/
@@ -72,17 +72,22 @@ export default function Login({path}) {
             })
     }
     console.log(user);
-    return (
-        <FormStyled onSubmit={handleSubmit}>
-            <label htmlFor="email')">Pseudonyme
-            </label>
+    return <>
+        <FormStyled id="login_form" onSubmit={handleSubmit}>
+            <fieldset>
+                <label htmlFor="email">Pseudonyme</label>
                 <input type="text" id="email" name="email" />
-            <label htmlFor="password">Mot de passe
-            </label>
+            </fieldset>
+            <fieldset>
+                <label htmlFor="password">Mot de passe</label>
                 <input type="password" id="password" name="password" />
+            </fieldset>
             <button>{path}</button>
             
             { path == "login" && goSignin && <><p>{goSignin}</p><Link to={'/signup'+pathBack}>S'enregistrer ?</Link></>}
         </FormStyled>
-    )
+        <aside id="login_aside">
+            <img src="/img/login_aside_1" alt="" />
+        </aside>
+    </>
 }

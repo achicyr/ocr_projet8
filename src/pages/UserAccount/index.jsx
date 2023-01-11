@@ -7,8 +7,9 @@ import styled from 'styled-components'
 import { AuthContext } from '../../utils/auth'
 import PagesComponents from '../../components/pagesComponents.js'
 
-function Post() {
+function UserAccount() {
 
+	/*
 	let [Contents, setContents] = useState([])
 	, {token, datas, user, setUser, setDatas} = useContext(AuthContext)
     , navigate = useNavigate()
@@ -18,7 +19,8 @@ function Post() {
         contents_tmp.push(<>
             <h2>{titre}</h2>
             <p>{creationDate}</p>
-            {/* <p>{new Date(creationDate)}</p> */}
+            {// <p>{new Date(creationDate)}</p>
+			}
             <img src={imageUrl} alt={titre} />
             <p>{contenu}</p>
         </>)
@@ -37,13 +39,31 @@ function Post() {
         const post = datas?.modelsDatas?.post.find(e=>document.location.pathname.split('/')[2] == e.titre.replace(' ','-')+'-'+e._id)
 		generateOutput(post)
 	}, [datas])
+	*/
 
-	
 
 	
 	return <>
-        <Link to="/">Retour</Link>
-		{Contents}
+		{/* {Contents} */}
+		<section id="mainSection_left">
+			<section id="account_details">
+				<figure>
+					<picture>
+						<img src="" alt="" />
+					</picture>
+					<figcaption></figcaption>
+				</figure>
+				<p></p>
+				<ul></ul>
+			</section>
+			<hr />
+			<article id="mapMark_details"></article>
+		</section>
+		<section id="mainSection_right">
+			<div id="map_gmap"></div>
+			<section id="history">
+			</section>
+		</section>
 	</>
 }
 export default Post

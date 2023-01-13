@@ -6,6 +6,10 @@ import styled from 'styled-components'
 
 import { AuthContext } from '../../utils/auth'
 import PagesComponents from '../../components/pagesComponents.js'
+import Gmap from '../../components/_/Gmap.jsx'
+import MapLeaflet from '../../components/_/MapLeaflet.jsx'
+import UnfullfilledRequests from '../../components/_/UnfullfilledRequests.jsx'
+// import Gmapp from '../../components/_/Gmapp.jsx'
 
 function Home() {
 	/*
@@ -50,16 +54,21 @@ function Home() {
 	return <>
 		{/* {Contents} */}
 		<section id="mainSection_left">
-			<span id="unfullfilledRequests"></span>
+			<UnfullfilledRequests />
 			<hr />
-			<article id="mapMark_details"></article>
+			<article id="mapMark_details">
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore recusandae voluptas fugit necessitatibus. Fugiat optio omnis corporis est, rem deserunt maiores distinctio blanditiis nihil. Sapiente amet numquam autem deleniti ipsam.
+				Accusamus quidem nulla ipsa itaque eos libero voluptates, corporis soluta id aperiam consequuntur illum quae reprehenderit ducimus rerum totam, provident adipisci dolorem quas, beatae distinctio? Possimus asperiores recusandae excepturi odit?
+				Ipsa accusamus asperiores quibusdam, laudantium adipisci, atque qui totam repudiandae eos, debitis soluta nam minima. Ex cumque sint consequuntur, labore cupiditate sunt quam facilis, provident quasi quis culpa exercitationem iusto.
+			</article>
 		</section>
 		<section id="mainSection_right">
-			<div id="map_gmap"></div>
-			<form onSubmit={handleSubmit}>
+			<Gmap />
+			{/* <MapLeaflet /> */}
+			{/* <form onSubmit={handleSubmit}>
 				<input placeholder="Entrer nom lieu, ou coordonnées de géolocalisation" />
 				<button>🔍</button>
-			</form>
+			</form> */}
 		</section>
 	</>
 }

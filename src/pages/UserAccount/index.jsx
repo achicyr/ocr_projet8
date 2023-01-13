@@ -66,6 +66,6 @@ function UserAccount() {
 		</section>
 	</>
 }
-export default Post
+export default UserAccount
 
 

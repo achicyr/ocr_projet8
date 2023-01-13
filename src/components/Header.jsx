@@ -33,24 +33,24 @@ export default function Header() {
     // useEffect(() => {
 	// }, [])
 	
-	return <header className="header">
-        <SectionLogoStyled className="header__logo">
+	return <header id="header">
+        <SectionLogoStyled id="header__logo">
             <Link to="/">
-                <img src="/logo192.png" alt="" />
+                <img src="/img/logo/logo_icon.png" alt="" />
                 {/* <img src={process.env.PUBLIC_URL +"/logo912.png"} alt="" /> */}
-                <span>Je suis la page d'accueil</span>
+                <span>In Love We Trust</span>
                 
             </Link>
         </SectionLogoStyled>
         <hgroup className="header__mainMenu">
-            <h1>Slogan principal</h1>
-            <h2>Slogan secondaire</h2>
+            <h1>Spread Charity Around You</h1>
+            <h2>Love Who Needs You</h2>
         </hgroup>
 
-        <SectionStyled className="header__logins">
+        <SectionStyled id="header__logins">
             {!token && <>
-                <Link to="/login" path="login">Login</Link>
-                <Link to="/signup" path="signup">Signup</Link>
+                <Link to="/login" path="login" title="Login">👤</Link>
+                <Link to="/signup" path="signup" title="Signup">➕</Link>
             </>}
             {token && user.role=="2" &&
                 <Link to="/menu/new">+</Link>

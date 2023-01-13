@@ -151,3 +151,8 @@ $txt-input-palette: (
         @content;
     }
 }
+@mixin until-tablette($max: map-get($breakpoints, tablette) + "px") {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}

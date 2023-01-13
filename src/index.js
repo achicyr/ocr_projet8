@@ -6,6 +6,7 @@ import './assets/scss/index.scss';
 import LogSignIn from './pages/LogSignIn';
 import UserAccount from './pages/UserAccount';
 import Home from './pages/Home';
+import Gmapp from './pages/Home/Gmapp';
 import NewRequest from './pages/NewRequest';
 import Header from './components/Header'
 import Nav from './components/Nav'
@@ -22,7 +23,7 @@ const MainStyled = styled.main`
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-	<React.StrictMode>
+	// <React.StrictMode>
 		<BrowserRouter>
 			<AuthProvider>
 				<Header />
@@ -30,6 +31,7 @@ root.render(
 				<MainStyled>
 					<Routes>
 						<Route path="/" element={<Home />}></Route>
+						<Route path="/g" element={<Gmapp />}></Route>
 						<Route path="/login" element={<LogSignIn path="login" />}></Route>
 						<Route path="/signup" element={<LogSignIn path="signup" />}></Route>
 						<Route path="/logout" element={<LogSignIn path="logout" />}></Route>
@@ -42,7 +44,7 @@ root.render(
 				<Footer />
 			</AuthProvider>
 		</BrowserRouter>
-	</React.StrictMode>
+	// </React.StrictMode>
 );
 
 

@@ -8,17 +8,109 @@ body{}
 
 
 
-body{
+body>div[id="root"]{
+  background: #99E2D0;
   >header{
+    &#header{
+      padding:1em;
+      border-bottom:solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px 1px #b3b3b3;
+      position: relative;
+    }
+    >hgroup{
+      display: flex;
+      flex-flow: wrap;
+      text-align: center;
+      >*{width: 100%;}
+      h1{
+        color: $primary;
+      }
+      h2{
+        color: $secondary;
+      }
+    }
+    >section{
+      &#header__logo{
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      &#header__logins{
+        background: $light1;
+        position: absolute;
+        border: solid;
+        padding: 0.5em;
+        border-radius: 5px;
+        top: 0;
+        right: 0;
+        width: 85px;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        >a{
+          transition:font-size .2s;
+          &:hover{font-size:1.2em;}
+        }
+      }
+    }
     
   }
   >nav{
 
   }
   >main{
-    >form{
-      &#login_form{
-        
+    display: flex;
+    flex-flow: wrap;
+    section{
+      @include from-desktop{
+        &#mainSection_left{width:40%;}
+        &#mainSection_right{width:60%;}
+      }
+      @include until-tablette{
+        width:100%;
+        &#mainSection_left{
+          min-height:400px;
+        }
+        &#mainSection_right{}
+      }
+      &#mainSection_left{
+        background-color: #9356dc;
+        background-image: $heropattern_section_left;
+        >article{
+          padding:1em;
+          text-align: justify;
+          color:white;
+        }
+      }
+      &#mainSection_right{}
+      #map {
+        height: 400px; /* The height is 400 pixels */
+        width: 100%; /* The width is the width of the web page */
+        &+p{
+          display: flex;
+          justify-content: center;
+          flex-flow: wrap;
+          >fieldset{
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            >input{
+              width:100px;
+              text-align: center;
+            }
+          }
+          >form{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            &#login_form{
+              
+            }
+          }
+        }
       }
     }
     >aside{
@@ -28,6 +120,7 @@ body{
     }
   }
   >footer{
+    >span{cursor:pointer;}
     >h4{
     }
     >h5,>a{}

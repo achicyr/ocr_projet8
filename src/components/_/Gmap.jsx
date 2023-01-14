@@ -38,7 +38,7 @@ export default function Gmap() {
         <Map center={center} zoom={zoom}>
             {clicks.map((latLng, i) => (<Marker key={i} position={latLng} />))}
         </Map>
-        <p>
+        <section>
             <fieldset>
                 <label htmlFor="lat">Latitude</label>
                 <input
@@ -67,7 +67,7 @@ export default function Gmap() {
                 <input placeholder="Entrer nom lieu, ou coordonnées de géolocalisation" />
                 <button>🔍</button>
             </form>
-        </p>
+        </section>
     </Wrapper>
 }
 

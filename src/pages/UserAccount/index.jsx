@@ -6,64 +6,67 @@ import styled from 'styled-components'
 
 import { AuthContext } from '../../utils/auth'
 import PagesComponents from '../../components/pagesComponents.js'
+import Gmap from '../../components/_/Gmap.jsx'
+import MapLeaflet from '../../components/_/MapLeaflet.jsx'
+import AccountView from '../../components/_/AccountView.jsx'
+import ChatboxModal from '../../components/_/ChatboxModal.jsx'
+// import Gmapp from '../../components/_/Gmapp.jsx'
 
 function UserAccount() {
-
 	/*
 	let [Contents, setContents] = useState([])
 	, {token, datas, user, setUser, setDatas} = useContext(AuthContext)
     , navigate = useNavigate()
 	, generateOutput = (contents) => {
-		let { titre, userId, imageUrl, contenu, creationDate } = contents || {}
+		let { template, models } = contents || {}
 		, contents_tmp = []
-        contents_tmp.push(<>
-            <h2>{titre}</h2>
-            <p>{creationDate}</p>
-            {// <p>{new Date(creationDate)}</p>
-			}
-            <img src={imageUrl} alt={titre} />
-            <p>{contenu}</p>
-        </>)
 		console.log(contents)
 
+		if(models){
+			contents_tmp.push(
+				models.map((model,i) => {
+					let Ok = PagesComponents[model] 
+					console.log(Ok);
+					
+					return <Ok key={model+"_"+i} datas={datas.modelsDatas[model]} />
+				})
+			)
+			
+		}
 		// contents_tmp.push(<Template data={template} bem="template" />)
 		// setContents(contents_tmp = <span>okok span</span>)
 		setContents(contents_tmp)
 	}
-	console.log("oioioui");
+	
 	
     useEffect(() => {
-		console.log(datas)
-	    if(token==false)navigate('/login')
-		else generateOutput(datas.home)
-        const post = datas?.modelsDatas?.post.find(e=>document.location.pathname.split('/')[2] == e.titre.replace(' ','-')+'-'+e._id)
-		generateOutput(post)
-	}, [datas])
+		console.log(token)
+        console.log("1,2, teste, test, 1,2, test")
+	    // if(token==false)navigate('/login')
+		// else generateOutput(datas.home)
+		generateOutput(datas.home)
+	}, [datas, token])
 	*/
 
 
-	
+	const handleSubmit = e => { 
+		alert('ok submitted')
+	}
 	return <>
 		{/* {Contents} */}
-		<section id="mainSection_left">
-			<section id="account_details">
-				<figure>
-					<picture>
-						<img src="" alt="" />
-					</picture>
-					<figcaption></figcaption>
-				</figure>
-				<p></p>
-				<ul></ul>
-			</section>
-			<hr />
-			<article id="mapMark_details"></article>
+		<section id="mainSection_left" className="userAccount">
+            <span className="close" onClick={e=>{e.target.classList.toggle('off');document.getElementById('mapMark_details').classList.toggle('off')}}>X</span>
+			<AccountView />
 		</section>
 		<section id="mainSection_right">
-			<div id="map_gmap"></div>
-			<section id="history">
-			</section>
+			<Gmap />
+			{/* <MapLeaflet /> */}
+			{/* <form onSubmit={handleSubmit}>
+				<input placeholder="Entrer nom lieu, ou coordonnées de géolocalisation" />
+				<button>🔍</button>
+			</form> */}
 		</section>
+		<ChatboxModal />
 	</>
 }
 export default UserAccount

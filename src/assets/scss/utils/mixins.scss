@@ -146,12 +146,12 @@ $txt-input-palette: (
     }
 }
 
-@mixin until-desktop($max: map-get($breakpoints, desktop) + "px") {
+@mixin to-desktop($max: map-get($breakpoints, desktop) + "px") {
     @media screen and (max-width: $max) {
         @content;
     }
 }
-@mixin until-tablette($max: map-get($breakpoints, tablette) + "px") {
+@mixin to-tablette($max: map-get($breakpoints, tablette) + "px") {
     @media screen and (max-width: $max) {
         @content;
     }

@@ -9,6 +9,7 @@ import PagesComponents from '../../components/pagesComponents.js'
 import Gmap from '../../components/_/Gmap.jsx'
 import MapLeaflet from '../../components/_/MapLeaflet.jsx'
 import UnfullfilledRequests from '../../components/_/UnfullfilledRequests.jsx'
+import MarkedInfos from '../../components/_/MarkedInfos.jsx'
 // import Gmapp from '../../components/_/Gmapp.jsx'
 
 function Home() {
@@ -54,13 +55,9 @@ function Home() {
 	return <>
 		{/* {Contents} */}
 		<section id="mainSection_left">
+            <span className="close" onClick={e=>{e.target.classList.toggle('off');document.getElementById('mapMark_details').classList.toggle('off')}}>X</span>
 			<UnfullfilledRequests />
-			<hr />
-			<article id="mapMark_details">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore recusandae voluptas fugit necessitatibus. Fugiat optio omnis corporis est, rem deserunt maiores distinctio blanditiis nihil. Sapiente amet numquam autem deleniti ipsam.
-				Accusamus quidem nulla ipsa itaque eos libero voluptates, corporis soluta id aperiam consequuntur illum quae reprehenderit ducimus rerum totam, provident adipisci dolorem quas, beatae distinctio? Possimus asperiores recusandae excepturi odit?
-				Ipsa accusamus asperiores quibusdam, laudantium adipisci, atque qui totam repudiandae eos, debitis soluta nam minima. Ex cumque sint consequuntur, labore cupiditate sunt quam facilis, provident quasi quis culpa exercitationem iusto.
-			</article>
+			<MarkedInfos />
 		</section>
 		<section id="mainSection_right">
 			<Gmap />

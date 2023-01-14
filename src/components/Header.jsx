@@ -36,13 +36,13 @@ export default function Header() {
 	return <header id="header">
         <SectionLogoStyled id="header__logo">
             <Link to="/">
+                <span>In Love We Trust</span>
                 <img src="/img/logo/logo_icon.png" alt="" />
                 {/* <img src={process.env.PUBLIC_URL +"/logo912.png"} alt="" /> */}
-                <span>In Love We Trust</span>
                 
             </Link>
         </SectionLogoStyled>
-        <hgroup className="header__mainMenu">
+        <hgroup id="header__slogans">
             <h1>Spread Charity Around You</h1>
             <h2>Love Who Needs You</h2>
         </hgroup>

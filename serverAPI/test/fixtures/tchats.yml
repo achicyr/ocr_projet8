@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  requester_id: 1
+  volontier_id: 1
+  contents: MyString
+
+two:
+  requester_id: 1
+  volontier_id: 1
+  contents: MyString

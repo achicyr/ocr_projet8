@@ -1,0 +1,2 @@
+class Tchat < ApplicationRecord
+end
